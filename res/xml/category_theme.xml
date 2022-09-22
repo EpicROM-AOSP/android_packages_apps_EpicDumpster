@@ -17,6 +17,19 @@
     android:title="@string/category_theme_title" >
 	
 	<PreferenceCategory
+    android:title="@string/general_category">
+	
+	<com.epic.support.preferences.SystemSettingListPreference
+        android:key="settings_dashboard_style"
+        android:title="@string/settings_dashboard_style_title"
+        android:summary="@string/settings_dashboard_style_summary"
+        android:entries="@array/settings_dashboard_style_entries"
+        android:entryValues="@array/settings_dashboard_style_values"
+        android:defaultValue="0" />
+		
+	</PreferenceCategory>	
+	
+	<PreferenceCategory
     android:title="@string/icons_category">
 
     <!-- Icon pack -->

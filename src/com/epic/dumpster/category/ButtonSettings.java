@@ -55,6 +55,7 @@ public class ButtonSettings extends SettingsPreferenceFragment
         PreferenceScreen prefSet = getPreferenceScreen();
         final Resources res = getResources();
         final PreferenceScreen prefScreen = getPreferenceScreen();
+
     }
 
     @Override

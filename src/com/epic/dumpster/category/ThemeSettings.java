@@ -40,13 +40,20 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.Indexable;
 import com.android.settingslib.search.SearchIndexable;
 
+import com.android.internal.util.epic.EpicUtils;
+import com.epic.support.preferences.SystemSettingListPreference;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 @SearchIndexable
-public class ThemeSettings extends SettingsPreferenceFragment 
-            implements Preference.OnPreferenceChangeListener {
+public class ThemeSettings extends SettingsPreferenceFragment implements
+        Preference.OnPreferenceChangeListener {
+
+    private static final String SETTINGS_DASHBOARD_STYLE = "settings_dashboard_style";
+
+    private SystemSettingListPreference mSettingsDashBoardStyle;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -55,10 +62,19 @@ public class ThemeSettings extends SettingsPreferenceFragment
         PreferenceScreen prefSet = getPreferenceScreen();
         final Resources res = getResources();
         final PreferenceScreen prefScreen = getPreferenceScreen();
+		
+		mSettingsDashBoardStyle = (SystemSettingListPreference) findPreference(SETTINGS_DASHBOARD_STYLE);
+        mSettingsDashBoardStyle.setOnPreferenceChangeListener(this);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        final String key = preference.getKey();
+        ContentResolver resolver = getActivity().getContentResolver();
+	      if (preference == mSettingsDashBoardStyle){
+            EpicUtils.showSettingsRestartDialog(getContext());
+            return true;
+            }
         return false;
     }  
 
@@ -66,6 +82,7 @@ public class ThemeSettings extends SettingsPreferenceFragment
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.EPIC_SETTINGS;
     }
+	
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
             new BaseSearchIndexProvider() {
                 @Override

@@ -465,5 +465,11 @@
     <!-- Material dismiss all button for notifications -->
     <string name="notification_material_dismiss_title">Clear all notification button</string>
     <string name="notification_material_dismiss_summary">Replace clear all notification text with material style floating button</string>
+	
+	<!-- Custom settings dashboard style -->
+    <string name="settings_dashboard_style_title">Settings Styles</string>
+    <string name="settings_dashboard_style_summary">Change the dashboard settings UI</string>
+    <string name="settings_dashboard_style_1">AOSP Style</string>
+    <string name="settings_dashboard_style_2">Epic Style</string>
 
 </resources>
