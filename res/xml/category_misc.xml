@@ -37,6 +37,12 @@
         android:title="@string/show_clipboard_overlay_title"
         android:summary="@string/show_clipboard_overlay_summary"
         android:defaultValue="true"/>
+		
+	<com.epic.support.preferences.SecureSettingSwitchPreference
+            android:key="spoof_storage_encryption_status"
+            android:title="@string/spoof_storage_encryption_status_title"
+            android:summary="@string/spoof_storage_encryption_status_summary"
+            android:defaultValue="false"/>	
 
     <Preference
             android:key="smart_pixels"
