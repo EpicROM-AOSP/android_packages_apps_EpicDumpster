@@ -16,4 +16,76 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/dumpster_dashboard_title" >
 
+    <!-- Statusbar Settings -->
+     <Preference
+          android:id="@+id/statusbar_settings"
+          android:title="@string/category_statusbar_title"
+          android:fragment="com.epic.dumpster.category.StatusBarSettings"
+          android:layout="@layout/preference_category_statusbar"
+          />
+
+    <!-- Quick Settings -->
+     <Preference
+          android:id="@+id/quick_settings"
+          android:title="@string/category_quicksettings_title"
+          android:fragment="com.epic.dumpster.category.QuickSettings"
+          android:layout="@layout/preference_category_quicksettings"
+          />
+
+    <!-- Misc Settings -->
+     <Preference
+          android:id="@+id/misc_settings"
+          android:title="@string/category_misc_title"
+          android:fragment="com.epic.dumpster.category.MiscSettings"
+          android:layout="@layout/preference_category_misc"
+          />
+
+    <!-- Theme Settings  -->
+     <Preference
+          android:id="@+id/theme_settings"
+          android:title="@string/category_theme_title"
+          android:fragment="com.epic.dumpster.category.ThemeSettings"
+          android:layout="@layout/preference_category_theme"
+          />
+		  
+	<!-- Buttons Settings -->
+        <Preference
+          android:id="@+id/buttons_settings"
+          android:title="@string/category_button_title"
+          android:fragment="com.epic.dumpster.category.ButtonSettings"
+          settings:layout="@layout/preference_category_buttons"
+          />
+
+    <!-- Gestures Settings -->
+        <Preference
+          android:id="@+id/gestures_settings"
+          android:title="@string/category_gestures_title" 
+          android:fragment="com.epic.dumpster.category.GestureSettings"
+          settings:layout="@layout/preference_category_sos_gestures"	  
+          />
+	
+    <!-- LockScreen Settings -->
+        <Preference
+          android:id="@+id/lockscreen_settings"
+          android:title="@string/category_lockscreen_title" 
+          android:fragment="com.epic.dumpster.category.LockScreenSettings"
+          settings:layout="@layout/preference_category_lockscreens"
+		  /> 
+		  
+    <!-- Notifications Settings -->
+        <Preference
+          android:id="@+id/notifications_settings"
+          android:title="@string/category_notifications_title"
+          android:fragment="com.epic.dumpster.category.NotificationSettings"
+          settings:layout="@layout/preference_category_notifications"
+	      />
+		  
+	<!-- System Settings -->
+        <Preference
+          android:id="@+id/system_settings"
+          android:title="@string/category_system_title" 
+          android:fragment="com.epic.dumpster.category.SystemSettings"
+          settings:layout="@layout/preference_category_system"
+          />
+		  
 </PreferenceScreen>
