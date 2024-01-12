@@ -12,80 +12,73 @@
      limitations under the License.
 -->
 <PreferenceScreen
+    android:title="@string/dumpster_dashboard_title"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
-    android:title="@string/dumpster_dashboard_title" >
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <!-- Statusbar Settings -->
-     <Preference
-          android:id="@+id/statusbar_settings"
-          android:title="@string/category_statusbar_title"
-          android:fragment="com.epic.dumpster.category.StatusBarSettings"
-          android:layout="@layout/preference_category_statusbar"
-          />
+    <!-- EpicROM Header -->
+    <com.android.settingslib.widget.LayoutPreference
+        android:key="epic_header"
+        android:layout="@layout/epic_dumpster_header"
+        settings:controller="com.epic.dumpster.EpicDumpsterHeaderController" />
+    <PreferenceCategory
+        android:title="Settings Features"
+        settings:layout="@layout/epic_dumpster_card_category">
 
-    <!-- Quick Settings -->
-     <Preference
-          android:id="@+id/quick_settings"
-          android:title="@string/category_quicksettings_title"
-          android:fragment="com.epic.dumpster.category.QuickSettings"
-          android:layout="@layout/preference_category_quicksettings"
-          />
-
-    <!-- Misc Settings -->
-     <Preference
-          android:id="@+id/misc_settings"
-          android:title="@string/category_misc_title"
-          android:fragment="com.epic.dumpster.category.MiscSettings"
-          android:layout="@layout/preference_category_misc"
-          />
-
-    <!-- Theme Settings  -->
-     <Preference
-          android:id="@+id/theme_settings"
-          android:title="@string/category_theme_title"
+    <!-- Themes -->
+        <Preference
+          android:icon="@drawable/ic_category_system"
+          android:title="Themes"
+          android:summary="Customize the system themes"
           android:fragment="com.epic.dumpster.category.ThemeSettings"
-          android:layout="@layout/preference_category_theme"
-          />
-		  
-	<!-- Buttons Settings -->
-        <Preference
-          android:id="@+id/buttons_settings"
-          android:title="@string/category_button_title"
-          android:fragment="com.epic.dumpster.category.ButtonSettings"
-          settings:layout="@layout/preference_category_buttons"
-          />
+          settings:layout="@layout/epicdumpster_card_left_top" />
 
-    <!-- Gestures Settings -->
+    <!-- Notifications -->
         <Preference
-          android:id="@+id/gestures_settings"
-          android:title="@string/category_gestures_title" 
-          android:fragment="com.epic.dumpster.category.GestureSettings"
-          settings:layout="@layout/preference_category_sos_gestures"	  
-          />
-	
-    <!-- LockScreen Settings -->
-        <Preference
-          android:id="@+id/lockscreen_settings"
-          android:title="@string/category_lockscreen_title" 
-          android:fragment="com.epic.dumpster.category.LockScreenSettings"
-          settings:layout="@layout/preference_category_lockscreens"
-		  /> 
-		  
-    <!-- Notifications Settings -->
-        <Preference
-          android:id="@+id/notifications_settings"
-          android:title="@string/category_notifications_title"
+          android:icon="@drawable/ic_category_notifications"
+          android:title="Notifications"
+          android:summary="Change the notifications area"
           android:fragment="com.epic.dumpster.category.NotificationSettings"
-          settings:layout="@layout/preference_category_notifications"
-	      />
-		  
-	<!-- System Settings -->
+          settings:layout="@layout/epicdumpster_card_right_top" />
+			
+	<!-- LockScreen -->
         <Preference
-          android:id="@+id/system_settings"
-          android:title="@string/category_system_title" 
-          android:fragment="com.epic.dumpster.category.SystemSettings"
-          settings:layout="@layout/preference_category_system"
-          />
+          android:icon="@drawable/ic_category_lockscreens"
+          android:title="Lock Screen"
+          android:summary="Lockscreen extra feature"
+          android:fragment="com.epic.dumpster.category.LockScreenSettings"
+          settings:layout="@layout/epicdumpster_card_left_bot" />
 		  
+	<!-- Miscellaneous -->
+        <Preference
+          android:icon="@drawable/ic_category_misc"
+          android:title="Miscellaneous"
+          android:summary="Some more extra stuff"
+          android:fragment="com.epic.dumpster.category.MiscSettings"
+          settings:layout="@layout/epicdumpster_card_right_bot" />			
+		  
+	<!-- Buttons -->
+        <Preference
+          android:icon="@drawable/ic_category_buttons"
+          android:title="Buttons"
+		  android:summary="Customize your buttons"
+          android:fragment="com.epic.dumpster.category.ButtonSettings"
+          settings:layout="@layout/epicdumpster_card_left_bot" />
+
+    <!-- Gestures -->
+        <Preference
+          android:icon="@drawable/ic_category_sos_gestures"
+          android:title="Gestures"
+		  android:summary="Gestures Customizations"
+          android:fragment="com.epic.dumpster.category.GestureSettings"
+          settings:layout="@layout/epicdumpster_card_right_bot" />	  
+		  
+	<!-- System -->
+        <Preference
+          android:icon="@drawable/ic_category_system"
+          android:title="System"
+		  android:summary="System Customizations" 
+          android:fragment="com.epic.dumpster.category.SystemSettings"
+          settings:layout="@layout/epicdumpster_card_left_bot" />
+	</PreferenceCategory>	  		  
 </PreferenceScreen>
