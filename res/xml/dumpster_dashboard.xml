@@ -18,9 +18,10 @@
 
     <!-- EpicROM Header -->
     <com.android.settingslib.widget.LayoutPreference
-        android:key="epic_header"
+        android:clickable="true"
         android:layout="@layout/epic_dumpster_header"
-        settings:controller="com.epic.dumpster.EpicDumpsterHeaderController" />
+        android:key="epic_header" />
+		
     <PreferenceCategory
         android:title="Settings Features"
         settings:layout="@layout/epic_dumpster_card_category">
