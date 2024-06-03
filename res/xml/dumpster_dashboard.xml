@@ -64,7 +64,7 @@
           android:title="Buttons"
 		  android:summary="Customize your buttons"
           android:fragment="com.epic.dumpster.category.ButtonSettings"
-          settings:layout="@layout/epicdumpster_card_left_bot" />
+          settings:layout="@layout/epicdumpster_card_left_top" />
 
     <!-- Gestures -->
         <Preference
@@ -72,7 +72,7 @@
           android:title="Gestures"
 		  android:summary="Gestures Customizations"
           android:fragment="com.epic.dumpster.category.GestureSettings"
-          settings:layout="@layout/epicdumpster_card_right_bot" />	  
+          settings:layout="@layout/epicdumpster_card_right_top" />	  
 		  
 	<!-- System -->
         <Preference
